@@ -1,6 +1,7 @@
 package com.sportyshooes.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,7 +36,12 @@ public class UserService implements IUserService {
 
 	@Override
 	public User getUser(String email, String password) {
-		return this.userRepository.findByEmailAndPassword(email, password).get(0);
+		Optional<User> optUser = this.userRepository.findByEmailAndPassword(email, password);
+		if (optUser!= null && optUser.isPresent()) {
+			return optUser.get();
+		}
+
+		return null;
 	}
 
 	@Override

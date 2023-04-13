@@ -67,14 +67,14 @@
 			<c:choose>
 				<c:when test="${empty user}">
 					<ul>
-						<li class="nav-item" style="list-style-type: none;"><a
+						<li class="nav-item" style="list-style-type: none; style="color: white;"><a
 							class="nav-link" href="/user/login">Login/</a></li>
-						<li class="nav-item" style="list-style-type: none;"><a
+						<li class="nav-item" style="list-style-type: none; style="color: white;"><a
 							class="nav-link" href="/user/save">Register</a></li>
 					</ul>
 				</c:when>
 				<c:otherwise>
-					<label> Welcome! ${user.firstName} ${user.lastName} | <a
+					<label> Welcome!<a href="/user/update?userId=${user.userId}"> ${user.firstName} ${user.lastName} </a> | <a
 						href="/user/logout">Logout</a>
 					</label>
 				</c:otherwise>

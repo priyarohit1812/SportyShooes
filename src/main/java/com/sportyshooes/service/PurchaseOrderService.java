@@ -39,4 +39,9 @@ public class PurchaseOrderService implements IPurchaseOrderService {
 		return !this.purchaseOrderRepository.existsById(purchaseOrderId);
 	}
 
+	@Override
+	public List<PurchaseOrder> getAllPurchaseOrderByUserId(Long userId) {
+		return this.purchaseOrderRepository.getOrdersByUser(userId);
+	}
+
 }

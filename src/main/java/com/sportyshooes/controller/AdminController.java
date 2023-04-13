@@ -35,6 +35,11 @@ public class AdminController {
 		this.genderList.add(new Gender("Female", "Female"));
 	}
 	
+	@GetMapping("/admin")
+	public String admin() {		
+		return "redirect:/admin/home";
+	}
+	
 	@GetMapping("/admin/home")
 	public String adminhome(HttpServletRequest request) {
 		HttpSession session = request.getSession();

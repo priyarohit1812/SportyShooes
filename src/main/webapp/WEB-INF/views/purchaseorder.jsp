@@ -18,47 +18,6 @@
 </head>
 <body>
 	<jsp:include page="adminnavbar.jsp"></jsp:include>
-	<div class="container mt-5 mb-5 d-flex justify-content-center">
-		<div class="card px-1 py-4">
-			<div class="card-body">
-
-				<div class="d-flex flex-row">
-					<form class="d-flex" method="get" action="/admin/search/productcategories">
-
-						<input class="form-control me-2" type="search" name="key" placeholder="Search" aria-label="Search">
-						<button class="btn btn-light" type="submit">Search</button>
-
-					</form>
-					
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-	<table class="table table-striped" border="1" style="width: 100%">
-
-		<thead class="thead-dark">
-			<tr>
-				<th scope="col">Purchase Order Id</th>
-				<th scope="col">CartId</th>
-				<th scope="col">Address</th>
-				<th scope="col">Payment</th>
-			</tr>
-		</thead>
-
-		<c:forEach var="PurchaseOrder" items="${orders}">
-			<tr>
-				<td>${PurchaseOrder.getPurchaseOrderId()}</td>
-				<td>${PurchaseOrder.getCart()}</td>
-				<td>${PurchaseOrder.getAddress()}</td>
-				<td>${PurchaseOrder.getPayment()}</td>
-
-			</tr>
-
-		</c:forEach>
-	</table>
-
+		<jsp:include page="purchaseorderlist.jsp"></jsp:include>
 </body>
 </html>

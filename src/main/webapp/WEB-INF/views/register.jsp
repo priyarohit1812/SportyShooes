@@ -19,60 +19,8 @@
 </head>
 <body>
 	<jsp:include page="navbar.jsp"></jsp:include>
-	
-	<div class="container mt-5 mb-5 d-flex justify-content-center">
-
-		<form:form action="/user/save"
-			modelAttribute="user" method="post">
-			<form:hidden path="userId"/>
-			<div class="row">
-				<label for="email">Email </label>
-				<form:input path="email" />
-			</div>
-
-			<div class="row">
-				<label for="firstName">FirstName </label>
-				<form:input path="firstName" />
-			</div>
-			
-			<div class="row">
-				<label for="lastName">LastName </label>
-				<form:input path="lastName" />
-			</div>
-			
-			<div class="row">
-				<label for="mobile">Mobile Number </label>
-				<form:input path="mobile" />
-			</div>
-			
-			<div class="row">
-				<label for="password">Password </label>
-				<form:input type = "password" path="password" />
-			</div>
-			
-			<div class="row">
-				<label for="gender">Gender </label>
-				<form:select class="form-control" path="gender" >
-				<option value=""></option>
-				<option value="Male">Male</option>
-				<option value="Female">Female</option>
-				<option value="Other">Other</option>
-				</form:select>
-			</div>
-			
-			<div class="row">
-				<label for="dateOfBirth">DateOfBirth </label>
-				<form:input type="date" path="dateOfBirth" />
-			</div>
-			
-			
-			<div class="row" style="margin-top: 10px;">
-				<input class="btn, btn-success btn-lg .btn-block" type="submit"
-					name="Save" value="Save">
-			</div>
-			
-			<div style="color: red">${errMessageAddCategory}</div>
-		</form:form>
-	</div>
-</body>
+	<h2 class="container mt-5 mb-5 d-flex justify-content-center">Register
+		New User</h2>
+	</body>
+	<jsp:include page="adduser.jsp"></jsp:include>
 </html>

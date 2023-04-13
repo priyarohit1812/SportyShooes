@@ -22,7 +22,7 @@
 	
 	<div class="container mt-5 mb-5 d-flex justify-content-center">
 
-		<form:form action="/address/save"
+		<form:form action="/address/save?cartId=${cartId}"
 			modelAttribute="address" method="post">
 			<form:hidden path="addressId"/>
 			<div class="row">

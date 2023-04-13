@@ -1,6 +1,5 @@
 package com.sportyshooes.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sportyshooes.enums.PaymentStatus;
 import com.sportyshooes.enums.PaymentType;
 
@@ -8,8 +7,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 
@@ -26,11 +23,7 @@ public class Payment {
 	@NotNull(message = "Payment Status is mandatory")
 	private PaymentStatus paymentStatus;
 	
-	@OneToOne
-	@JsonIgnoreProperties({"payment"})
-	@NotNull(message = "Purchase Order reference is mandatory")
-	@JoinColumn(name = "purchase_order_fk")
-	private PurchaseOrder purchaseOrder;
+	private String remark;
 	
 	public Payment() {
 	}	
@@ -59,17 +52,17 @@ public class Payment {
 		this.paymentStatus = paymentStatus;
 	}
 
-	public PurchaseOrder getPurchaseOrder() {
-		return purchaseOrder;
+	public String getRemark() {
+		return remark;
 	}
 
-	public void setPurchaseOrder(PurchaseOrder purchaseOrder) {
-		this.purchaseOrder = purchaseOrder;
+	public void setRemark(String remark) {
+		this.remark = remark;
 	}
 
 	@Override
 	public String toString() {
 		return "Payment [paymentId=" + paymentId + ", paymentType=" + paymentType + ", paymentStatus=" + paymentStatus
-				+ ", purchaseOrder=" + purchaseOrder + "]";
-	}		
+				+ ", remark=" + remark + "]";
+	}	
 }

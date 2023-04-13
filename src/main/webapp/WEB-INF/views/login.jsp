@@ -57,7 +57,7 @@
 													<button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
 												</div>
 
-												<a class="small text-muted" href="#!">Forgot password?</a>
+												<a class="small text-muted" href="/user/register">Register</a>
 
 											</form>
 

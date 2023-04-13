@@ -17,8 +17,8 @@
 <style type="text/css">
 .button {
 	display: block;
-	width:fit-content;
-	background: rgb(25,135,84);
+	width: fit-content;
+	background: rgb(25, 135, 84);
 	padding: 10px;
 	text-align: center;
 	border-radius: 5px;
@@ -66,13 +66,17 @@
 							</c:forEach>
 						</table>
 					</div>
-					
-					<div class="row">
-						<h3>Total Cart Price : &#8377 ${cart.getTotalCartPrice()}</h3>
-					</div>
-					<div class="row">
-						<a class="button col-2" href="#">Proceed to Checkout</a>
-					</div>
+					<c:if test="${ not empty orderItems}">
+						<div class="row">
+							<h3>Total Cart Price : &#8377 ${cart.getTotalCartPrice()}</h3>
+						</div>
+						<div class="row">
+							<a class="button col-2" href="/user/order/selectAddress?cartId=${cart.getCartId()}">Proceed to Checkout</a>
+						</div>
+					</c:if>
+					<c:if test="${ empty orderItems}">
+						<h4>The cart is empty!</h4>
+					</c:if>
 				</div>
 			</div>
 		</div>
